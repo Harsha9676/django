@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"> 
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <title>
+            result
+        </title>
+    </head>
+    <body>
+
+        {% block content %}
+        result..<td>{{ res }}</td>
+
+        
+        {% endblock %}
+        <center><button class="btn btn-success" id = 'csv'>DOWNLOAD CSV</button> </center>
+        <script type ="text/javascript" src ="src/tableHTMLExport.js"></script>
+        <script type="text/javascript">
+        $('#csv').on('click',function(){
+            $('example').tableHTMLExport({
+                type:'csv',
+                filename:'sample.csv'
+            });
+        });
+    </script>
+    </body>
+</html>
